@@ -5,11 +5,86 @@
 {% block extcss %}
     <link rel="stylesheet" href="{% static 'market/css/market.css' %}">
 {% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'market/js/market.js' %}"></script>
+{% endblock %}
+
 {% block title %}
     爱鲜峰 | 超市
 
 {% endblock %}
 {% block content %}
-    market
+    <div class="market">
+{#    #侧边栏#}
+        <div class="type-slider">
+            {% for foodtype in foodtypes %}
+                <ul>
+                    <li class="type-item">
+                        <span></span>
+                        <a href="{% url 'AXF:market' foodtype.typeid %}">
+                            {{ foodtype.typename }}
+                        </a>
+                    </li>
+                </ul>
+            {% endfor %}
+
+        </div>
+
+        <div class="nav">
+           <ul>
+               <li>
+                   <span>全部类型<i class='glyphicon glyphicon-chevron-up'></i></span>
+               </li>
+               <li>
+                   <span>综合排序<i class='glyphicon glyphicon-chevron-down'></i></span>
+               </li>
+           </ul>
+
+        </div>
+
+        <div class="main-content">
+            <div class="content-wrapper">
+                <ul>
+                    {% for goodlist in goodlists %}
+                        <li>
+                            <a href="#">
+                                <img src="{{ goodlist.productimg }}" alt="" class="goods-img">
+                                <div class="goods-info">
+                                    <p class="name">{{ goodlist.productlongname }}</p>
+                                    <p class="detailtag">
+                                        {% if goodlist.isxf %}
+                                            <span class="xf">精选</span>
+                                            <i></i>
+                                        {% endif %}
+                                    </p>
+                                    <p class="specifics">{{ goodlist.specifics }}</p>
+                                    <p class="price">
+                                        <span class="now-price">{{ goodlist.price }}</span>
+                                        <span class="market-price">{{ goodlist.marketprice }}</span>
+
+                                    </p>
+
+                                </div>
+
+                            </a>
+                            <div class="bt-wrapper">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="num">10</span>
+                                <span class="glyphicon glyphicon-minus"></span>
+
+                            </div>
+
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
 
 {% endblock %}

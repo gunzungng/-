@@ -41,7 +41,7 @@
                 <dd>首页</dd>
             </dl>
         </a>
-        <a href="{% url 'AXF:market' %}" class="market">
+        <a href="{% url 'AXF:market' 104749 %}" class="market">
             <dl>
                 <dt><span></span></dt>
                 <dd>闪购超市</dd>
@@ -68,6 +68,7 @@
 
 </body>
 <script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'base/js/jquery.cookie.js' %}"></script>
 <script src="{% static 'base/js/bootstrap.js' %}"></script>
 <script src="{% static 'base/js/swiper.js' %}"></script>
 <script src="{% static 'base/js/base.js' %}"></script>
