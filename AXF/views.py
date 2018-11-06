@@ -47,3 +47,11 @@ def cart(request):
 
 def mine(request):
     return render(request, 'mine/mine.html')
+
+
+def registe(request):
+    if request.method=='GET':
+        pass
+    elif request.method=='POST':
+        pass
+

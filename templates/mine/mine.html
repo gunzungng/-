@@ -4,12 +4,110 @@
 {% block extcss %}
     <link rel="stylesheet" href="{% static 'mine/css/mine.css' %}">
 {% endblock %}
+{% block extjs %}
+    <script src='{% static  'mine/js/mine.js' %}'></script>
+{% endblock %}
 
 {% block title %}
     爱鲜峰 | 我的
 
 {% endblock %}
 {% block content %}
-    mine
+    <div class="mine">
+        <div class="user-wrapper">
+            <div class="user-img">
+                <img src="{% static 'uploads/atom.png' %}" alt="">
+            </div>
+            <div class="user-content">
+                <p>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        未登陆
+                    </a>
+                </p>
+                <p>
+                    <span class=" glyphicon glyphicon-fire "> 无等级 </span>
+                </p>
+                <a href="#" class="register">注册</a>
+            </div>
+        </div>
+        <div class="collect"><span class="glyphicon glyphicon-folder-open"></span>
+        收藏</div>
+        <div class="other">
+            <section class="my">
+                <span>我的订单</span>
+                <a href="#">查看全部订单</a>
+
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-euro"></dt>
+                            <dd>待付款</dd>
+                        </dl>
+
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-euro"></dt>
+                            <dd>待付款</dd>
+                        </dl>
+
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-euro"></dt>
+                            <dd>待付款</dd>
+                        </dl>
+
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-euro"></dt>
+                            <dd>待付款</dd>
+                        </dl>
+
+                    </li>
+                </ul>
+            </section>
+            <section>
+                 <ul>
+                    <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-credit-card"></dt>
+                            <dd>优惠券</dd>
+                        </dl>
+
+                    </li>
+                     <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-credit-card"></dt>
+                            <dd>优惠券</dd>
+                        </dl>
+
+                    </li>
+                     <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-credit-card"></dt>
+                            <dd>优惠券</dd>
+                        </dl>
+
+                    </li>
+                     <li>
+                        <dl>
+                            <dt class="glyphicon glyphicon-credit-card"></dt>
+                            <dd>优惠券</dd>
+                        </dl>
+
+                    </li>
+                 </ul>
+            </section>
+            <section class="quit">
+                <a href="#">退出</a>
+            </section>
+        </div>
+
+    </div>
 
 {% endblock %}
